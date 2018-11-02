@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 26
     buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.example.android.apis"
         minSdkVersion 23
-        targetSdkVersion 28
+        //noinspection OldTargetApi
+        targetSdkVersion 26
 
         testApplicationId "com.example.android.apis.tests"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
@@ -25,9 +26,10 @@ android {
 }
 
 ext {
-    support = '28.0.0'
+    support = '26.1.0'
 }
 
 dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:support-v4:${support}"
 }

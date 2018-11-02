@@ -16,8 +16,6 @@
 
 package com.example.android.apis.view;
 
-import com.example.android.apis.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
@@ -28,8 +26,14 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.example.android.apis.R;
+
 import java.util.List;
 
+/**
+ * 演示 layoutAnimation 系列, LayoutAnimationController 负责.
+ * 补间动画
+ */
 public class LayoutAnimation1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,7 @@ public class LayoutAnimation1 extends Activity {
         loadApps();
 
         setContentView(R.layout.layout_animation_1);
-        GridView grid = (GridView) findViewById(R.id.grid);
+        GridView grid = findViewById(R.id.grid);
         grid.setAdapter(new LayoutAnimation1.AppsAdapter());
     }
 

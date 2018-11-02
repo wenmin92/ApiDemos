@@ -18,7 +18,6 @@ package com.example.android.apis.view;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
-import com.example.android.apis.R;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -29,7 +28,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.ViewFlipper;
 
+import com.example.android.apis.R;
 
+/**
+ * Views/Animation/Push
+ * <p>
+ * 演示ViewFlipper的使用, ViewFlipper 是 ViewAnimator 的子类.
+ * 补间动画
+ */
 public class Animation2 extends Activity implements
         AdapterView.OnItemSelectedListener {
 
@@ -38,11 +44,11 @@ public class Animation2 extends Activity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.animation_2);
 
-        mFlipper = ((ViewFlipper) this.findViewById(R.id.flipper));
-        mFlipper.startFlipping();
+        mFlipper = findViewById(R.id.flipper);
+        // mFlipper.startFlipping();
 
-        Spinner s = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        Spinner s = findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, mStrings);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);
@@ -52,30 +58,30 @@ public class Animation2 extends Activity implements
     public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
         switch (position) {
 
-        case 0:
-            mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
-                    R.anim.push_up_in));
-            mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
-                    R.anim.push_up_out));
-            break;
-        case 1:
-            mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
-                    R.anim.push_left_in));
-            mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
-                    R.anim.push_left_out));
-            break;
-        case 2:
-            mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
-                    android.R.anim.fade_in));
-            mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
-                    android.R.anim.fade_out));
-            break;
-        default:
-            mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
-                    R.anim.hyperspace_in));
-            mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
-                    R.anim.hyperspace_out));
-            break;
+            case 0:
+                mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
+                        R.anim.push_up_in));
+                mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
+                        R.anim.push_up_out));
+                break;
+            case 1:
+                mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
+                        R.anim.push_left_in));
+                mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
+                        R.anim.push_left_out));
+                break;
+            case 2:
+                mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
+                        android.R.anim.fade_in));
+                mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
+                        android.R.anim.fade_out));
+                break;
+            default:
+                mFlipper.setInAnimation(AnimationUtils.loadAnimation(this,
+                        R.anim.hyperspace_in));
+                mFlipper.setOutAnimation(AnimationUtils.loadAnimation(this,
+                        R.anim.hyperspace_out));
+                break;
         }
     }
 

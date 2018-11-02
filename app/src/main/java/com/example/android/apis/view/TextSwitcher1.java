@@ -16,8 +16,6 @@
 
 package com.example.android.apis.view;
 
-import com.example.android.apis.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -29,8 +27,13 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
+import com.example.android.apis.R;
+
 /**
- * Uses a TextSwitcher.
+ * Views/Text/TextSwitcher
+ * <p>
+ * Uses a TextSwitcher. TextSwitcher 是 TextSwitcher 的子类, 是 ViewAnimator 的子类.
+ * 补间动画
  */
 public class TextSwitcher1 extends Activity implements ViewSwitcher.ViewFactory,
         View.OnClickListener {
@@ -45,7 +48,7 @@ public class TextSwitcher1 extends Activity implements ViewSwitcher.ViewFactory,
 
         setContentView(R.layout.text_switcher_1);
 
-        mSwitcher = (TextSwitcher) findViewById(R.id.switcher);
+        mSwitcher = findViewById(R.id.switcher);
         mSwitcher.setFactory(this);
 
         Animation in = AnimationUtils.loadAnimation(this,
@@ -55,7 +58,7 @@ public class TextSwitcher1 extends Activity implements ViewSwitcher.ViewFactory,
         mSwitcher.setInAnimation(in);
         mSwitcher.setOutAnimation(out);
 
-        Button nextButton = (Button) findViewById(R.id.next);
+        Button nextButton = findViewById(R.id.next);
         nextButton.setOnClickListener(this);
 
         updateCounter();

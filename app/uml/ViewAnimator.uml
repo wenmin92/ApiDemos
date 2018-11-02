@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>android.widget.ViewAnimator</OriginalElement>
+  <nodes>
+    <node x="74.25" y="160.0">android.widget.ViewSwitcher</node>
+    <node x="138.5" y="80.0">android.widget.ViewAnimator</node>
+    <node x="146.0" y="240.0">android.widget.TextSwitcher</node>
+    <node x="141.5" y="0.0">android.widget.FrameLayout</node>
+    <node x="0.0" y="240.0">android.widget.ImageSwitcher</node>
+    <node x="212.25" y="160.0">android.widget.ViewFlipper</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="android.widget.ImageSwitcher" target="android.widget.ViewSwitcher">
+      <point x="0.0" y="-15.0" />
+      <point x="63.0" y="215.0" />
+      <point x="103.75" y="215.0" />
+      <point x="-29.5" y="15.0" />
+    </edge>
+    <edge source="android.widget.ViewSwitcher" target="android.widget.ViewAnimator">
+      <point x="0.0" y="-15.0" />
+      <point x="133.25" y="135.0" />
+      <point x="169.25" y="135.0" />
+      <point x="-30.75" y="15.0" />
+    </edge>
+    <edge source="android.widget.ViewAnimator" target="android.widget.FrameLayout">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="android.widget.TextSwitcher" target="android.widget.ViewSwitcher">
+      <point x="0.0" y="-15.0" />
+      <point x="203.5" y="215.0" />
+      <point x="162.75" y="215.0" />
+      <point x="29.5" y="15.0" />
+    </edge>
+    <edge source="android.widget.ViewFlipper" target="android.widget.ViewAnimator">
+      <point x="0.0" y="-15.0" />
+      <point x="266.75" y="135.0" />
+      <point x="230.75" y="135.0" />
+      <point x="30.75" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="158.0" y="135.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
